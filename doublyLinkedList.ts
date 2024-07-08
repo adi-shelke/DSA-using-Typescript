@@ -72,6 +72,20 @@ class DoublyLinkedList {
     else this.tail = currentHead.prev;
   }
 
+  renoveTail():void{
+    let currentHead = this.head
+    if(!currentHead)
+        return
+    while(currentHead && currentHead!=this.tail)
+        currentHead=currentHead.next
+    
+    if(currentHead && currentHead.prev){
+      currentHead.prev.next = null
+      this.tail = currentHead.prev
+      currentHead.prev = null
+    }
+  }
+
   print(): void {
     let current = this.head;
     while (current) {
@@ -88,4 +102,5 @@ dll.add(7);
 dll.add(8);
 dll.addToStart(4);
 dll.remove(3);
+dll.renoveTail()
 dll.print();
