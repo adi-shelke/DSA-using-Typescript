@@ -101,6 +101,6 @@ dll.add(6);
 dll.add(7);
 dll.add(8);
 dll.addToStart(4);
-dll.remove(3);
+dll.remove(1);
 dll.renoveTail()
 dll.print();
